@@ -308,6 +308,8 @@ xt_gtpu_target(
 static struct xt_target xt_gtpu_reg __read_mostly = 
 {
     .name           = "GTPU",
+    .family         = AF_INET,
+    .table          = "mangle",
     .target         = xt_gtpu_target,
     .targetsize     = sizeof(struct xt_gtpu_target_info),
     .me             = THIS_MODULE,
